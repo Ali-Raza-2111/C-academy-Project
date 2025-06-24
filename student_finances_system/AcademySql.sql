@@ -30,6 +30,7 @@ CREATE TABLE FeeStructure (
     FeeID INT IDENTITY(1,1) PRIMARY KEY,
     Amount DECIMAL(10, 2)
 );
+
 drop table FeeStructure
 -------------------------Transction History Table------------------------------
 CREATE TABLE TransactionHistory (
@@ -43,6 +44,8 @@ CREATE TABLE TransactionHistory (
     FOREIGN KEY (StudentID) REFERENCES StudentInfo(StudentID),
     FOREIGN KEY (FeeID) REFERENCES FeeStructure(FeeID),
 );
+
+TRUNCATE TABLE TransactionHistory;
 
 drop table TransactionHistory
 

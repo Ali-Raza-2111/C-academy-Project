@@ -28,32 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.StudentID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Searchbtn = new System.Windows.Forms.Button();
-            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnAllRecord = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.stdID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stdName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stdClasss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stdTotalFee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stdMonth = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stdConcessionP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stdAmountPaid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stdisPaid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -65,19 +65,19 @@
             this.stdID,
             this.stdName,
             this.stdClasss,
-            this.stdTotalFee,
+            this.stdMonth,
             this.stdConcessionP,
             this.stdAmountPaid,
-            this.stdisPaid});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(3, 0, 0, 3);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Sienna;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colStatus});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(3, 0, 0, 3);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Sienna;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.Location = new System.Drawing.Point(1, 289);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -86,13 +86,14 @@
             this.dataGridView1.Size = new System.Drawing.Size(1249, 345);
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.StudentID);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.Searchbtn);
-            this.panel1.Controls.Add(this.btnLogin);
+            this.panel1.Controls.Add(this.btnAllRecord);
             this.panel1.Location = new System.Drawing.Point(12, 158);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1228, 107);
@@ -130,18 +131,20 @@
             this.Searchbtn.TabIndex = 11;
             this.Searchbtn.Text = "Search";
             this.Searchbtn.UseVisualStyleBackColor = false;
+            this.Searchbtn.Click += new System.EventHandler(this.Searchbtn_Click);
             // 
-            // btnLogin
+            // btnAllRecord
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.Black;
-            this.btnLogin.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(810, 30);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(201, 59);
-            this.btnLogin.TabIndex = 10;
-            this.btnLogin.Text = "All Record";
-            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnAllRecord.BackColor = System.Drawing.Color.Black;
+            this.btnAllRecord.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAllRecord.ForeColor = System.Drawing.Color.White;
+            this.btnAllRecord.Location = new System.Drawing.Point(810, 30);
+            this.btnAllRecord.Name = "btnAllRecord";
+            this.btnAllRecord.Size = new System.Drawing.Size(201, 59);
+            this.btnAllRecord.TabIndex = 10;
+            this.btnAllRecord.Text = "All Record";
+            this.btnAllRecord.UseVisualStyleBackColor = false;
+            this.btnAllRecord.Click += new System.EventHandler(this.btnAllRecord_Click);
             // 
             // label1
             // 
@@ -149,7 +152,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(185, 26);
+            this.label1.Location = new System.Drawing.Point(283, 30);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(90, 40, 35, 20);
@@ -182,13 +185,13 @@
             this.stdClasss.Name = "stdClasss";
             this.stdClasss.ReadOnly = true;
             // 
-            // stdTotalFee
+            // stdMonth
             // 
-            this.stdTotalFee.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.stdTotalFee.HeaderText = "Total Fee";
-            this.stdTotalFee.MinimumWidth = 8;
-            this.stdTotalFee.Name = "stdTotalFee";
-            this.stdTotalFee.ReadOnly = true;
+            this.stdMonth.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.stdMonth.HeaderText = "Month";
+            this.stdMonth.MinimumWidth = 8;
+            this.stdMonth.Name = "stdMonth";
+            this.stdMonth.ReadOnly = true;
             // 
             // stdConcessionP
             // 
@@ -206,13 +209,13 @@
             this.stdAmountPaid.Name = "stdAmountPaid";
             this.stdAmountPaid.ReadOnly = true;
             // 
-            // stdisPaid
+            // colStatus
             // 
-            this.stdisPaid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.stdisPaid.HeaderText = "Status";
-            this.stdisPaid.MinimumWidth = 8;
-            this.stdisPaid.Name = "stdisPaid";
-            this.stdisPaid.ReadOnly = true;
+            this.colStatus.HeaderText = "Status";
+            this.colStatus.MinimumWidth = 8;
+            this.colStatus.Name = "colStatus";
+            this.colStatus.ReadOnly = true;
+            this.colStatus.Width = 88;
             // 
             // studentinfo
             // 
@@ -243,14 +246,14 @@
         private System.Windows.Forms.TextBox StudentID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Searchbtn;
-        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button btnAllRecord;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn stdID;
         private System.Windows.Forms.DataGridViewTextBoxColumn stdName;
         private System.Windows.Forms.DataGridViewTextBoxColumn stdClasss;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stdTotalFee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stdMonth;
         private System.Windows.Forms.DataGridViewTextBoxColumn stdConcessionP;
         private System.Windows.Forms.DataGridViewTextBoxColumn stdAmountPaid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stdisPaid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
     }
 }
