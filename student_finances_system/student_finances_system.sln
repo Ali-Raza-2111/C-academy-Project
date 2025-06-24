@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "student_finances_system", "student_finances_system\student_finances_system.csproj", "{EAE33EBC-6998-44DE-8416-4724E495D66E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EAE33EBC-6998-44DE-8416-4724E495D66E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAE33EBC-6998-44DE-8416-4724E495D66E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAE33EBC-6998-44DE-8416-4724E495D66E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAE33EBC-6998-44DE-8416-4724E495D66E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7596135E-94D4-4DE2-83B8-05A44094A804}
+	EndGlobalSection
+EndGlobal

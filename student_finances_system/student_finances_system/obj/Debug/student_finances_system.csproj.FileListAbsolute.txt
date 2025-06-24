@@ -1,0 +1,45 @@
+C:\Users\Ajwa\source\repos\student_finances_system\student_finances_system\bin\Debug\student_finances_system.exe.config
+C:\Users\Ajwa\source\repos\student_finances_system\student_finances_system\bin\Debug\student_finances_system.exe
+C:\Users\Ajwa\source\repos\student_finances_system\student_finances_system\bin\Debug\student_finances_system.pdb
+C:\Users\Ajwa\source\repos\student_finances_system\student_finances_system\obj\Debug\student_finances_system.Form1.resources
+C:\Users\Ajwa\source\repos\student_finances_system\student_finances_system\obj\Debug\student_finances_system.installmentdetail.resources
+C:\Users\Ajwa\source\repos\student_finances_system\student_finances_system\obj\Debug\student_finances_system.payment.resources
+C:\Users\Ajwa\source\repos\student_finances_system\student_finances_system\obj\Debug\student_finances_system.Properties.Resources.resources
+C:\Users\Ajwa\source\repos\student_finances_system\student_finances_system\obj\Debug\student_finances_system.studentinfo.resources
+C:\Users\Ajwa\source\repos\student_finances_system\student_finances_system\obj\Debug\student_finances_system.studentreport.resources
+C:\Users\Ajwa\source\repos\student_finances_system\student_finances_system\obj\Debug\student_finances_system.csproj.GenerateResource.Cache
+C:\Users\Ajwa\source\repos\student_finances_system\student_finances_system\obj\Debug\student_finances_system.csproj.CoreCompileInputs.cache
+C:\Users\Ajwa\source\repos\student_finances_system\student_finances_system\obj\Debug\student_finances_system.exe
+C:\Users\Ajwa\source\repos\student_finances_system\student_finances_system\obj\Debug\student_finances_system.pdb
+C:\Users\Ajwa\source\repos\student_finances_system\student_finances_system\obj\Debug\student_finances_system.csprojAssemblyReference.cache
+C:\Users\Ajwa\source\repos\student_finances_system\student_finances_system\obj\Debug\student_finances_system.loginform.resources
+E:\OOP\Academy Management System\student_finances_system\student_finances_system\bin\Debug\student_finances_system.exe.config
+E:\OOP\Academy Management System\student_finances_system\student_finances_system\bin\Debug\student_finances_system.exe
+E:\OOP\Academy Management System\student_finances_system\student_finances_system\bin\Debug\student_finances_system.pdb
+E:\OOP\Academy Management System\student_finances_system\student_finances_system\obj\Debug\student_finances_system.csproj.AssemblyReference.cache
+E:\OOP\Academy Management System\student_finances_system\student_finances_system\obj\Debug\student_finances_system.loginform.resources
+E:\OOP\Academy Management System\student_finances_system\student_finances_system\obj\Debug\student_finances_system.Form1.resources
+E:\OOP\Academy Management System\student_finances_system\student_finances_system\obj\Debug\student_finances_system.installmentdetail.resources
+E:\OOP\Academy Management System\student_finances_system\student_finances_system\obj\Debug\student_finances_system.payment.resources
+E:\OOP\Academy Management System\student_finances_system\student_finances_system\obj\Debug\student_finances_system.Properties.Resources.resources
+E:\OOP\Academy Management System\student_finances_system\student_finances_system\obj\Debug\student_finances_system.studentinfo.resources
+E:\OOP\Academy Management System\student_finances_system\student_finances_system\obj\Debug\student_finances_system.studentreport.resources
+E:\OOP\Academy Management System\student_finances_system\student_finances_system\obj\Debug\student_finances_system.csproj.GenerateResource.cache
+E:\OOP\Academy Management System\student_finances_system\student_finances_system\obj\Debug\student_finances_system.csproj.CoreCompileInputs.cache
+E:\OOP\Academy Management System\student_finances_system\student_finances_system\obj\Debug\student_finances_system.exe
+E:\OOP\Academy Management System\student_finances_system\student_finances_system\obj\Debug\student_finances_system.pdb
+D:\New folder\C-academy-Project\student_finances_system\student_finances_system\bin\Debug\student_finances_system.exe.config
+D:\New folder\C-academy-Project\student_finances_system\student_finances_system\bin\Debug\student_finances_system.exe
+D:\New folder\C-academy-Project\student_finances_system\student_finances_system\bin\Debug\student_finances_system.pdb
+D:\New folder\C-academy-Project\student_finances_system\student_finances_system\obj\Debug\student_finances_system.csproj.AssemblyReference.cache
+D:\New folder\C-academy-Project\student_finances_system\student_finances_system\obj\Debug\student_finances_system.Form1.resources
+D:\New folder\C-academy-Project\student_finances_system\student_finances_system\obj\Debug\student_finances_system.installmentdetail.resources
+D:\New folder\C-academy-Project\student_finances_system\student_finances_system\obj\Debug\student_finances_system.payment.resources
+D:\New folder\C-academy-Project\student_finances_system\student_finances_system\obj\Debug\student_finances_system.Properties.Resources.resources
+D:\New folder\C-academy-Project\student_finances_system\student_finances_system\obj\Debug\student_finances_system.studentinfo.resources
+D:\New folder\C-academy-Project\student_finances_system\student_finances_system\obj\Debug\student_finances_system.studentreport.resources
+D:\New folder\C-academy-Project\student_finances_system\student_finances_system\obj\Debug\student_finances_system.csproj.GenerateResource.cache
+D:\New folder\C-academy-Project\student_finances_system\student_finances_system\obj\Debug\student_finances_system.csproj.CoreCompileInputs.cache
+D:\New folder\C-academy-Project\student_finances_system\student_finances_system\obj\Debug\student_finances_system.exe
+D:\New folder\C-academy-Project\student_finances_system\student_finances_system\obj\Debug\student_finances_system.pdb
+D:\New folder\C-academy-Project\student_finances_system\student_finances_system\obj\Debug\student_finances_system.loginform.resources
