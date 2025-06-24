@@ -62,6 +62,7 @@ namespace student_finances_system
             string fullName = studentNameTextBox.Text.Trim();
             string monthName = Monthcmbx.SelectedItem?.ToString();
             decimal amount;
+            decimal concessionPercent = 0;
 
             if (string.IsNullOrEmpty(studentID) || string.IsNullOrEmpty(fullName) || string.IsNullOrEmpty(monthName))
             {
@@ -74,6 +75,25 @@ namespace student_finances_system
                 MessageBox.Show("Please enter a valid amount.");
                 return;
             }
+
+            // Validate and parse concession percent (optional input)
+            if (!string.IsNullOrEmpty(ConcPercTxtbx.Text))
+            {
+                if (!decimal.TryParse(ConcPercTxtbx.Text, out concessionPercent))
+                {
+                    MessageBox.Show("Please enter a valid concession percent.");
+                    return;
+                }
+
+                if (concessionPercent < 0 || concessionPercent > 100)
+                {
+                    MessageBox.Show("Concession percent must be between 0 and 100.");
+                    return;
+                }
+            }
+
+            // Calculate net amount after concession
+            decimal netAmount = amount - (amount * concessionPercent / 100);
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -105,19 +125,23 @@ namespace student_finances_system
                     }
 
                     // 3. Insert into TransactionHistory
-                    string insertTransactionQuery = @"INSERT INTO TransactionHistory (StudentID, FeeID, AmountPaid, MonthName, IsPaid)
-                                              VALUES (@StudentID, @FeeID, @AmountPaid, @MonthName, @IsPaid)";
+                    string insertTransactionQuery = @"
+            INSERT INTO TransactionHistory (StudentID, FeeID, AmountPaid, MonthName, IsPaid, ConcessionPercent)
+            VALUES (@StudentID, @FeeID, @AmountPaid, @MonthName, @IsPaid, @ConcessionPercent)";
+
                     SqlCommand transactionCmd = new SqlCommand(insertTransactionQuery, conn, transaction);
                     transactionCmd.Parameters.AddWithValue("@StudentID", studentID);
                     transactionCmd.Parameters.AddWithValue("@FeeID", feeID);
-                    transactionCmd.Parameters.AddWithValue("@AmountPaid", amount);
+                    transactionCmd.Parameters.AddWithValue("@AmountPaid", netAmount);
                     transactionCmd.Parameters.AddWithValue("@MonthName", monthName);
                     transactionCmd.Parameters.AddWithValue("@IsPaid", true);
+                    transactionCmd.Parameters.AddWithValue("@ConcessionPercent", concessionPercent);
+
                     transactionCmd.ExecuteNonQuery();
 
                     transaction.Commit();
 
-                    MessageBox.Show("Transaction successfully saved.");
+                    MessageBox.Show("Transaction successfully saved with concession.");
                 }
                 catch (Exception ex)
                 {
