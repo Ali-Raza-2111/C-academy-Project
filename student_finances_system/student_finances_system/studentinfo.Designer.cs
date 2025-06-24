@@ -30,81 +30,23 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label1 = new System.Windows.Forms.Label();
-            this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.search = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.StudentID = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Searchbtn = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.stdID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stdName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stdClasss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stdTotalFee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stdConcessionP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stdAmountPaid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stdisPaid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(60, -9);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(90, 40, 35, 20);
-            this.label1.Size = new System.Drawing.Size(573, 99);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "STUDENT INFORMATION";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // directorySearcher1
-            // 
-            this.directorySearcher1.ClientTimeout = System.TimeSpan.Parse("-00:00:01");
-            this.directorySearcher1.ServerPageTimeLimit = System.TimeSpan.Parse("-00:00:01");
-            this.directorySearcher1.ServerTimeLimit = System.TimeSpan.Parse("-00:00:01");
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnLogin);
-            this.panel1.Controls.Add(this.search);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Location = new System.Drawing.Point(4, 82);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(728, 85);
-            this.panel1.TabIndex = 5;
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.Color.Black;
-            this.btnLogin.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(512, 25);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(141, 46);
-            this.btnLogin.TabIndex = 10;
-            this.btnLogin.Text = "Search";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            // 
-            // search
-            // 
-            this.search.AutoSize = true;
-            this.search.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search.Location = new System.Drawing.Point(73, 45);
-            this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(44, 24);
-            this.search.TabIndex = 1;
-            this.search.Text = "Find";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(153, 35);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(300, 34);
-            this.textBox1.TabIndex = 0;
             // 
             // dataGridView1
             // 
@@ -120,12 +62,13 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6});
+            this.stdID,
+            this.stdName,
+            this.stdClasss,
+            this.stdTotalFee,
+            this.stdConcessionP,
+            this.stdAmountPaid,
+            this.stdisPaid});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -135,61 +78,141 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 183);
+            this.dataGridView1.Location = new System.Drawing.Point(1, 289);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 40;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1251, 472);
-            this.dataGridView1.TabIndex = 6;
+            this.dataGridView1.Size = new System.Drawing.Size(1249, 345);
+            this.dataGridView1.TabIndex = 9;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // Column1
+            // panel1
             // 
-            this.Column1.HeaderText = "student Rollno";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 139;
+            this.panel1.Controls.Add(this.StudentID);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.Searchbtn);
+            this.panel1.Controls.Add(this.btnLogin);
+            this.panel1.Location = new System.Drawing.Point(12, 158);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1228, 107);
+            this.panel1.TabIndex = 8;
             // 
-            // Column2
+            // StudentID
             // 
-            this.Column2.HeaderText = "student Name";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 138;
+            this.StudentID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.StudentID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.StudentID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.StudentID.Location = new System.Drawing.Point(261, 46);
+            this.StudentID.Name = "StudentID";
+            this.StudentID.Size = new System.Drawing.Size(271, 28);
+            this.StudentID.TabIndex = 13;
+            this.StudentID.TextChanged += new System.EventHandler(this.StudentID_TextChanged);
             // 
-            // Column3
+            // label2
             // 
-            this.Column3.HeaderText = "session";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 97;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(135, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 22);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Student ID";
             // 
-            // Column4
+            // Searchbtn
             // 
-            this.Column4.HeaderText = "section";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 93;
+            this.Searchbtn.BackColor = System.Drawing.Color.Black;
+            this.Searchbtn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Searchbtn.ForeColor = System.Drawing.Color.White;
+            this.Searchbtn.Location = new System.Drawing.Point(583, 30);
+            this.Searchbtn.Name = "Searchbtn";
+            this.Searchbtn.Size = new System.Drawing.Size(201, 59);
+            this.Searchbtn.TabIndex = 11;
+            this.Searchbtn.Text = "Search";
+            this.Searchbtn.UseVisualStyleBackColor = false;
             // 
-            // Column5
+            // btnLogin
             // 
-            this.Column5.HeaderText = "total fee";
-            this.Column5.MinimumWidth = 8;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 97;
+            this.btnLogin.BackColor = System.Drawing.Color.Black;
+            this.btnLogin.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(810, 30);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(201, 59);
+            this.btnLogin.TabIndex = 10;
+            this.btnLogin.Text = "All Record";
+            this.btnLogin.UseVisualStyleBackColor = false;
             // 
-            // Column6
+            // label1
             // 
-            this.Column6.HeaderText = "Fee status";
-            this.Column6.MinimumWidth = 8;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 114;
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(185, 26);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(90, 40, 35, 20);
+            this.label1.Size = new System.Drawing.Size(631, 99);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "ALL STUDENT FEE RECORD";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // stdID
+            // 
+            this.stdID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.stdID.HeaderText = "StudentID ";
+            this.stdID.MinimumWidth = 8;
+            this.stdID.Name = "stdID";
+            this.stdID.ReadOnly = true;
+            // 
+            // stdName
+            // 
+            this.stdName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.stdName.HeaderText = "Student Name";
+            this.stdName.MinimumWidth = 8;
+            this.stdName.Name = "stdName";
+            this.stdName.ReadOnly = true;
+            // 
+            // stdClasss
+            // 
+            this.stdClasss.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.stdClasss.HeaderText = "class";
+            this.stdClasss.MinimumWidth = 8;
+            this.stdClasss.Name = "stdClasss";
+            this.stdClasss.ReadOnly = true;
+            // 
+            // stdTotalFee
+            // 
+            this.stdTotalFee.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.stdTotalFee.HeaderText = "Total Fee";
+            this.stdTotalFee.MinimumWidth = 8;
+            this.stdTotalFee.Name = "stdTotalFee";
+            this.stdTotalFee.ReadOnly = true;
+            // 
+            // stdConcessionP
+            // 
+            this.stdConcessionP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.stdConcessionP.HeaderText = "Concession Percentage";
+            this.stdConcessionP.MinimumWidth = 8;
+            this.stdConcessionP.Name = "stdConcessionP";
+            this.stdConcessionP.ReadOnly = true;
+            // 
+            // stdAmountPaid
+            // 
+            this.stdAmountPaid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.stdAmountPaid.HeaderText = "Amount Paid";
+            this.stdAmountPaid.MinimumWidth = 8;
+            this.stdAmountPaid.Name = "stdAmountPaid";
+            this.stdAmountPaid.ReadOnly = true;
+            // 
+            // stdisPaid
+            // 
+            this.stdisPaid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.stdisPaid.HeaderText = "Status";
+            this.stdisPaid.MinimumWidth = 8;
+            this.stdisPaid.Name = "stdisPaid";
+            this.stdisPaid.ReadOnly = true;
             // 
             // studentinfo
             // 
@@ -204,9 +227,10 @@
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "studentinfo";
             this.Text = "studentinfo";
+            this.Load += new System.EventHandler(this.studentinfo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,18 +238,19 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.DirectoryServices.DirectorySearcher directorySearcher1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label search;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox StudentID;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button Searchbtn;
+        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stdID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stdName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stdClasss;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stdTotalFee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stdConcessionP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stdAmountPaid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stdisPaid;
     }
 }
