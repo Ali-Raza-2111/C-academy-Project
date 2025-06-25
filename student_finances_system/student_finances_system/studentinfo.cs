@@ -13,13 +13,7 @@ namespace student_finances_system
 {
     public partial class studentinfo : Form
     {
-        public static class DatabaseHelper
-        {
-            public static string GetConnectionString()
-            {
-                return "Data Source=BARYAR\\SQLEXPRESS;Initial Catalog=Student;Integrated Security=True";
-            }
-        }
+        
 
         private void SearchStudentFeeDetails()
         {
