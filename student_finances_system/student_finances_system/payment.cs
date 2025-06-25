@@ -57,7 +57,8 @@ namespace student_finances_system
             th.ConcessionPercent,
             th.AmountPaid,
             th.MonthName             AS Month,
-            CASE WHEN th.IsPaid = 1 THEN 'Paid' ELSE 'Not Paid' END AS PaymentStatus
+            CASE WHEN th.IsPaid = 1 THEN 'Paid' ELSE 'Not Paid' END AS PaymentStatus,
+            th.PaymentDate           AS PaymentDate
         FROM TransactionHistory th
         INNER JOIN StudentInfo  si ON th.StudentID = si.StudentID
         INNER JOIN FeeStructure fs ON th.FeeID     = fs.FeeID
@@ -71,7 +72,7 @@ namespace student_finances_system
                 {
                     cmd.Parameters.AddWithValue("@StudentID", studentId);
                     con.Open();
-                    using (var reader = cmd.ExecuteReader())  // :contentReference[oaicite:0]{index=0}
+                    using (var reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
@@ -82,7 +83,8 @@ namespace student_finances_system
                                 reader["ConcessionPercent"],
                                 reader["AmountPaid"],
                                 reader["Month"],
-                                reader["PaymentStatus"]
+                                reader["PaymentStatus"],
+                                Convert.ToDateTime(reader["PaymentDate"]).ToString("yyyy-MM-dd")
                             );
                         }
                     }
@@ -90,9 +92,11 @@ namespace student_finances_system
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Database error:\n" + ex.Message);
+                MessageBox.Show("Database error:\n" + ex.Message,
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         public void displayAllGridData()
         {
@@ -106,7 +110,8 @@ namespace student_finances_system
             th.ConcessionPercent,
             th.AmountPaid,
             th.MonthName             AS Month,
-            CASE WHEN th.IsPaid = 1 THEN 'Paid' ELSE 'Not Paid' END AS PaymentStatus
+            CASE WHEN th.IsPaid = 1 THEN 'Paid' ELSE 'Not Paid' END AS PaymentStatus,
+            th.PaymentDate           AS PaymentDate
         FROM TransactionHistory th
         INNER JOIN StudentInfo  si ON th.StudentID = si.StudentID
         INNER JOIN FeeStructure fs ON th.FeeID     = fs.FeeID
@@ -129,7 +134,8 @@ namespace student_finances_system
                                 reader["ConcessionPercent"],
                                 reader["AmountPaid"],
                                 reader["Month"],
-                                reader["PaymentStatus"]
+                                reader["PaymentStatus"],
+                                Convert.ToDateTime(reader["PaymentDate"]).ToString("yyyy-MM-dd")
                             );
                         }
                     }
@@ -137,7 +143,8 @@ namespace student_finances_system
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Database error:\n" + ex.Message);
+                MessageBox.Show("Database error:\n" + ex.Message,
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -273,6 +280,35 @@ COMMIT;
 
             ResequenceTransactionIds();
             displayAllGridData();
+        }
+
+        private void TransDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void StudentID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TransDataGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Only target the “paystatus” column by its Name
+            if (TransDataGrid.Columns[e.ColumnIndex].Name == "paystatus" && e.Value != null)
+            {
+                string status = e.Value.ToString();
+
+                // Set only the ForeColor on this cell
+                if (status == "Paid")
+                {
+                    e.CellStyle.ForeColor = Color.Green;
+                }
+                else if (status == "Not Paid")
+                {
+                    e.CellStyle.ForeColor = Color.Red;
+                }
+            }
         }
     }
 }

@@ -37,5 +37,38 @@ namespace student_finances_system
 
             return idCollection;
         }
+
+        public static void UpdatePaymentDate(int transactionId)
+        {
+            const string sql = @"
+        UPDATE TransactionHistory
+        SET PaymentDate = GETDATE()
+        WHERE TransactionID = @TransactionID;
+    ";
+
+            try
+            {
+                using (var con = new SqlConnection(DatabaseHelper.GetConnectionString()))
+                using (var cmd = new SqlCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@TransactionID", transactionId);
+                    con.Open();
+                    int affected = cmd.ExecuteNonQuery();  // runs the UPDATE :contentReference[oaicite:0]{index=0}
+                    if (affected == 0)
+                        MessageBox.Show($"No transaction found with ID {transactionId}.",
+                                        "Update Payment Date", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Database error while updating payment date:\n{ex.Message}",
+                                "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Unexpected error:\n{ex.Message}",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

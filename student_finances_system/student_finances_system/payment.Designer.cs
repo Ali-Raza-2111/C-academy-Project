@@ -45,7 +45,7 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paystatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.TransDataGrid)).BeginInit();
             this.panel1.SuspendLayout();
@@ -83,7 +83,7 @@
             this.Column5,
             this.Column6,
             this.Column7,
-            this.Column8,
+            this.paystatus,
             this.Column9});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
@@ -99,8 +99,10 @@
             this.TransDataGrid.ReadOnly = true;
             this.TransDataGrid.RowHeadersWidth = 40;
             this.TransDataGrid.RowTemplate.Height = 28;
-            this.TransDataGrid.Size = new System.Drawing.Size(1192, 292);
+            this.TransDataGrid.Size = new System.Drawing.Size(1239, 292);
             this.TransDataGrid.TabIndex = 15;
+            this.TransDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TransDataGrid_CellContentClick);
+            this.TransDataGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.TransDataGrid_CellFormatting);
             // 
             // panel1
             // 
@@ -147,6 +149,7 @@
             this.StudentID.Name = "StudentID";
             this.StudentID.Size = new System.Drawing.Size(213, 26);
             this.StudentID.TabIndex = 0;
+            this.StudentID.TextChanged += new System.EventHandler(this.StudentID_TextChanged);
             this.StudentID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StudentID_KeyDown);
             // 
             // label1
@@ -236,13 +239,13 @@
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             // 
-            // Column8
+            // paystatus
             // 
-            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column8.HeaderText = "Payment Status";
-            this.Column8.MinimumWidth = 8;
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
+            this.paystatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.paystatus.HeaderText = "Payment Status";
+            this.paystatus.MinimumWidth = 8;
+            this.paystatus.Name = "paystatus";
+            this.paystatus.ReadOnly = true;
             // 
             // Column9
             // 
@@ -292,7 +295,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paystatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
     }
 }

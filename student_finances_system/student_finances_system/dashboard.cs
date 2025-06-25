@@ -29,15 +29,17 @@ namespace student_finances_system
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
+            // 1. Read & validate inputs
             string connectionString = DatabaseHelper.GetConnectionString();
-
             string studentID = StudentID.Text.Trim();
             string fullName = studentNameTextBox.Text.Trim();
             string monthName = Monthcmbx.SelectedItem?.ToString();
             decimal amount;
-            decimal concessionPercent = 0;
+            decimal concessionPercent = 0m;
 
-            if (string.IsNullOrEmpty(studentID) || string.IsNullOrEmpty(fullName) || string.IsNullOrEmpty(monthName))
+            if (string.IsNullOrEmpty(studentID)
+                || string.IsNullOrEmpty(fullName)
+                || string.IsNullOrEmpty(monthName))
             {
                 MessageBox.Show("Please fill in all fields.");
                 return;
@@ -49,7 +51,6 @@ namespace student_finances_system
                 return;
             }
 
-            
             if (!string.IsNullOrEmpty(ConcPercTxtbx.Text))
             {
                 if (!decimal.TryParse(ConcPercTxtbx.Text, out concessionPercent))
@@ -57,7 +58,6 @@ namespace student_finances_system
                     MessageBox.Show("Please enter a valid concession percent.");
                     return;
                 }
-
                 if (concessionPercent < 0 || concessionPercent > 100)
                 {
                     MessageBox.Show("Concession percent must be between 0 and 100.");
@@ -65,63 +65,88 @@ namespace student_finances_system
                 }
             }
 
-           
-            decimal netAmount = amount - (amount * concessionPercent / 100);
+            decimal netAmount = amount - (amount * concessionPercent / 100m);
+
+            // 2. Capture the payment date (just date portion)
+            DateTime paymentDate = DateTime.Now.Date;
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                SqlTransaction transaction = conn.BeginTransaction();
-
-                try
+                using (SqlTransaction tx = conn.BeginTransaction())
                 {
-                    // 1. Insert into FeeStructure
-                    string insertFeeQuery = "INSERT INTO FeeStructure (Amount) VALUES (@Amount); SELECT SCOPE_IDENTITY();";
-                    SqlCommand feeCmd = new SqlCommand(insertFeeQuery, conn, transaction);
-                    feeCmd.Parameters.AddWithValue("@Amount", amount);
-                    int feeID = Convert.ToInt32(feeCmd.ExecuteScalar());
-
-                    // 2. Check if Student exists in StudentInfo
-                    string checkStudentQuery = "SELECT COUNT(*) FROM StudentInfo WHERE StudentID = @StudentID";
-                    SqlCommand checkStudentCmd = new SqlCommand(checkStudentQuery, conn, transaction);
-                    checkStudentCmd.Parameters.AddWithValue("@StudentID", studentID);
-                    int studentExists = (int)checkStudentCmd.ExecuteScalar();
-
-                    if (studentExists == 0)
+                    try
                     {
-                        // Optionally add new StudentInfo if not exists
-                        string insertStudentQuery = "INSERT INTO StudentInfo (StudentID, FullName, FatherName, Class) VALUES (@StudentID, @FullName, '', '')";
-                        SqlCommand insertStudentCmd = new SqlCommand(insertStudentQuery, conn, transaction);
-                        insertStudentCmd.Parameters.AddWithValue("@StudentID", studentID);
-                        insertStudentCmd.Parameters.AddWithValue("@FullName", fullName);
-                        insertStudentCmd.ExecuteNonQuery();
+                        // (a) Insert into FeeStructure & get FeeID
+                        const string insertFeeSql = @"
+                    INSERT INTO FeeStructure (Amount)
+                    VALUES (@Amount);
+                    SELECT CAST(SCOPE_IDENTITY() AS INT);";
+
+                        int feeID;
+                        using (var feeCmd = new SqlCommand(insertFeeSql, conn, tx))
+                        {
+                            feeCmd.Parameters.AddWithValue("@Amount", amount);
+                            feeID = (int)feeCmd.ExecuteScalar();  // :contentReference[oaicite:0]{index=0}
+                        }
+
+                        // (b) Ensure the student exists
+                        const string checkStudentSql = @"
+                    SELECT COUNT(*) FROM StudentInfo WHERE StudentID = @StudentID;";
+
+                        int exists;
+                        using (var chkCmd = new SqlCommand(checkStudentSql, conn, tx))
+                        {
+                            chkCmd.Parameters.AddWithValue("@StudentID", studentID);
+                            exists = (int)chkCmd.ExecuteScalar();
+                        }
+
+                        if (exists == 0)
+                        {
+                            const string insertStudentSql = @"
+                        INSERT INTO StudentInfo (StudentID, FullName, FatherName, Class)
+                        VALUES (@StudentID, @FullName, '', '');";
+
+                            using (var insStdCmd = new SqlCommand(insertStudentSql, conn, tx))
+                            {
+                                insStdCmd.Parameters.AddWithValue("@StudentID", studentID);
+                                insStdCmd.Parameters.AddWithValue("@FullName", fullName);
+                                insStdCmd.ExecuteNonQuery();
+                            }
+                        }
+
+                        // (c) Insert into TransactionHistory with PaymentDate
+                        const string insertTransSql = @"
+                    INSERT INTO TransactionHistory
+                        (StudentID, FeeID, AmountPaid, MonthName, IsPaid, ConcessionPercent, PaymentDate)
+                    VALUES
+                        (@StudentID, @FeeID, @AmountPaid, @MonthName, @IsPaid, @ConcessionPercent, @PaymentDate);";
+
+                        using (var transCmd = new SqlCommand(insertTransSql, conn, tx))
+                        {
+                            transCmd.Parameters.AddWithValue("@StudentID", studentID);
+                            transCmd.Parameters.AddWithValue("@FeeID", feeID);
+                            transCmd.Parameters.AddWithValue("@AmountPaid", netAmount);
+                            transCmd.Parameters.AddWithValue("@MonthName", monthName);
+                            transCmd.Parameters.AddWithValue("@IsPaid", true);
+                            transCmd.Parameters.AddWithValue("@ConcessionPercent", concessionPercent);
+                            transCmd.Parameters.AddWithValue("@PaymentDate", paymentDate);
+
+                            transCmd.ExecuteNonQuery();
+                        }
+
+                        // Commit all three operations as one atomic unit
+                        tx.Commit();
+                        MessageBox.Show("Payment recorded successfully.");
                     }
-
-                    // 3. Insert into TransactionHistory
-                    string insertTransactionQuery = @"
-            INSERT INTO TransactionHistory (StudentID, FeeID, AmountPaid, MonthName, IsPaid, ConcessionPercent)
-            VALUES (@StudentID, @FeeID, @AmountPaid, @MonthName, @IsPaid, @ConcessionPercent)";
-
-                    SqlCommand transactionCmd = new SqlCommand(insertTransactionQuery, conn, transaction);
-                    transactionCmd.Parameters.AddWithValue("@StudentID", studentID);
-                    transactionCmd.Parameters.AddWithValue("@FeeID", feeID);
-                    transactionCmd.Parameters.AddWithValue("@AmountPaid", netAmount);
-                    transactionCmd.Parameters.AddWithValue("@MonthName", monthName);
-                    transactionCmd.Parameters.AddWithValue("@IsPaid", true);
-                    transactionCmd.Parameters.AddWithValue("@ConcessionPercent", concessionPercent);
-
-                    transactionCmd.ExecuteNonQuery();
-
-                    transaction.Commit();
-
-                    MessageBox.Show("Transaction successfully saved with concession.");
-                }
-                catch (Exception ex)
-                {
-                    transaction.Rollback();
-                    MessageBox.Show("Error: " + ex.Message);
+                    catch (Exception ex)
+                    {
+                        tx.Rollback();
+                        MessageBox.Show("Error saving transaction: " + ex.Message);
+                    }
                 }
             }
+
         }
         List<string> allMonths = new List<string>
 {
