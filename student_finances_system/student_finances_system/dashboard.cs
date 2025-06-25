@@ -76,7 +76,7 @@ namespace student_finances_system
                 return;
             }
 
-            // Validate and parse concession percent (optional input)
+            
             if (!string.IsNullOrEmpty(ConcPercTxtbx.Text))
             {
                 if (!decimal.TryParse(ConcPercTxtbx.Text, out concessionPercent))
@@ -92,7 +92,7 @@ namespace student_finances_system
                 }
             }
 
-            // Calculate net amount after concession
+           
             decimal netAmount = amount - (amount * concessionPercent / 100);
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -150,6 +150,36 @@ namespace student_finances_system
                 }
             }
         }
+        List<string> allMonths = new List<string>
+{
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+};
+        private void LoadAvailableMonths(string studentID)
+        {
+            List<string> availableMonths = new List<string>(allMonths);
+
+            string connectionString = DatabaseHelper.GetConnectionString();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT MonthName FROM TransactionHistory WHERE StudentID = @StudentID AND IsPaid = 1";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@StudentID", studentID);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string paidMonth = reader["MonthName"].ToString();
+                    availableMonths.Remove(paidMonth); // Remove paid months
+                }
+                reader.Close();
+            }
+
+            Monthcmbx.Items.Clear();
+            Monthcmbx.Items.AddRange(availableMonths.ToArray());
+        }
+
 
         private void loginform_Load(object sender, EventArgs e)
         {
@@ -173,14 +203,17 @@ namespace student_finances_system
                     if (result != null)
                     {
                         studentNameTextBox.Text = result.ToString();
+                        // Load months when student found
+                        LoadAvailableMonths(StudentID.Text.Trim());
                     }
                     else
                     {
                         studentNameTextBox.Text = "Student not found";
+                        Monthcmbx.Items.Clear(); // Clear if not found
                     }
                 }
 
-                // Prevent 'ding' sound on Enter
+                // Prevent 'ding' sound
                 e.Handled = true;
                 e.SuppressKeyPress = true;
             }
@@ -194,6 +227,36 @@ namespace student_finances_system
         private void StudentID_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void ConcPercTxtbx_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void amountTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void conAmountTxtbx_TextChanged(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(amountTextBox.Text, out decimal amount) &&
+            decimal.TryParse(conAmountTxtbx.Text, out decimal concession) &&
+            amount != 0)
+            {
+                decimal percentage = (concession / amount) * 100;
+                ConcPercTxtbx.Text = percentage.ToString("0.00");
+            }
+            else
+            {
+                ConcPercTxtbx.Text = string.Empty;
+            }
+        }
+
+        private void Monthcmbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }
