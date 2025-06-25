@@ -15,28 +15,7 @@ namespace student_finances_system
     public partial class loginform : Form
     {
         
-        private void LoadAutoCompleteData()
-        {
-            AutoCompleteStringCollection idCollection = new AutoCompleteStringCollection();
-
-            using (SqlConnection con = new SqlConnection(DatabaseHelper.GetConnectionString()))
-            {
-                string query = "SELECT StudentID FROM StudentInfo";
-                SqlCommand cmd = new SqlCommand(query, con);
-
-                con.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    idCollection.Add(reader["StudentID"].ToString());
-                }
-
-                reader.Close();
-            }
-
-            StudentID.AutoCompleteCustomSource = idCollection;
-        }
+       
         public loginform()
         {
             InitializeComponent();
@@ -177,8 +156,8 @@ namespace student_finances_system
 
         private void loginform_Load(object sender, EventArgs e)
         {
-            
-            LoadAutoCompleteData();
+
+            StudentID.AutoCompleteCustomSource=DatabaseHelper.GetStudentIdAutoCompleteCollection();
         }
 
         private void StudentID_KeyDown(object sender, KeyEventArgs e)

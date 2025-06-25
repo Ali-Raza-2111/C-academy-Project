@@ -29,7 +29,7 @@ namespace student_finances_system
             {
                 con.Open();
 
-                // Get student basic info
+              
                 string studentQuery = "SELECT FullName, Class FROM StudentInfo WHERE StudentID = @StudentID";
                 SqlCommand studentCmd = new SqlCommand(studentQuery, con);
                 studentCmd.Parameters.AddWithValue("@StudentID", studentId);
@@ -50,14 +50,14 @@ namespace student_finances_system
                 }
                 reader.Close();
 
-                // Prepare months list
+                
                 List<string> months = new List<string>
         {
             "January","February","March","April","May","June",
             "July","August","September","October","November","December"
         };
 
-                // Clear existing rows
+               
                 dataGridView1.Rows.Clear();
 
                 foreach (string month in months)
@@ -81,7 +81,7 @@ namespace student_finances_system
                     }
                     transactionReader.Close();
 
-                    // Add row to DataGridView (without totalFee)
+                    
                     dataGridView1.Rows.Add(
                         studentId,
                         studentName,
@@ -116,10 +116,10 @@ namespace student_finances_system
                 }
                 paidReader.Close();
 
-                // Clear previous rows
+                
                 dataGridView1.Rows.Clear();
 
-                // If no paid records found
+                
                 if (paidStudentIds.Count == 0)
                 {
                     MessageBox.Show("No students have paid fees.");
@@ -127,7 +127,7 @@ namespace student_finances_system
                     return;
                 }
 
-                // Prepare months list
+                
                 List<string> months = new List<string>
         {
             "January","February","March","April","May","June",
@@ -136,7 +136,7 @@ namespace student_finances_system
 
                 foreach (string studentId in paidStudentIds)
                 {
-                    // Get student basic info
+                   
                     string studentQuery = "SELECT FullName, Class FROM StudentInfo WHERE StudentID = @StudentID";
                     SqlCommand studentCmd = new SqlCommand(studentQuery, con);
                     studentCmd.Parameters.AddWithValue("@StudentID", studentId);
@@ -153,7 +153,7 @@ namespace student_finances_system
 
                     foreach (string month in months)
                     {
-                        // Fetch transaction info for this month and student
+                        
                         string transactionQuery = "SELECT AmountPaid, IsPaid, ConcessionPercent FROM TransactionHistory " +
                                                   "WHERE StudentID = @StudentID AND MonthName = @MonthName";
                         SqlCommand transactionCmd = new SqlCommand(transactionQuery, con);
@@ -173,7 +173,7 @@ namespace student_finances_system
                         }
                         transactionReader.Close();
 
-                        // Only display if status is Paid
+                        
                         if (status == "Paid")
                         {
                             dataGridView1.Rows.Add(
@@ -195,28 +195,7 @@ namespace student_finances_system
 
 
 
-        private void LoadAutoCompleteData()
-        {
-            AutoCompleteStringCollection idCollection = new AutoCompleteStringCollection();
-
-            using (SqlConnection con = new SqlConnection(DatabaseHelper.GetConnectionString()))
-            {
-                string query = "SELECT StudentID FROM StudentInfo";
-                SqlCommand cmd = new SqlCommand(query, con);
-
-                con.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    idCollection.Add(reader["StudentID"].ToString());
-                }
-
-                reader.Close();
-            }
-
-            StudentID.AutoCompleteCustomSource = idCollection;
-        }
+        
         public studentinfo()
         {
             InitializeComponent();
@@ -242,8 +221,9 @@ namespace student_finances_system
 
         private void studentinfo_Load(object sender, EventArgs e)
         {
-            LoadAutoCompleteData();
-            
+            StudentID.AutoCompleteCustomSource = DatabaseHelper.GetStudentIdAutoCompleteCollection();
+
+
 
         }
 
@@ -259,7 +239,7 @@ namespace student_finances_system
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            // Check if we're formatting the Status column
+           
             if (dataGridView1.Columns[e.ColumnIndex].Name == "colStatus" && e.Value != null)
             {
                 string statusValue = e.Value.ToString();

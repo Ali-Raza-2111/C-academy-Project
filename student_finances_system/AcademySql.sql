@@ -45,6 +45,8 @@ CREATE TABLE TransactionHistory (
     FOREIGN KEY (FeeID) REFERENCES FeeStructure(FeeID),
 );
 
+
+
 TRUNCATE TABLE TransactionHistory;
 
 drop table TransactionHistory
