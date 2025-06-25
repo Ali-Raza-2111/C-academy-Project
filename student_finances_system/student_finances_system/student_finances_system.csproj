@@ -79,12 +79,6 @@
     <Compile Include="studentinfo.Designer.cs">
       <DependentUpon>studentinfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="studentreport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="studentreport.Designer.cs">
-      <DependentUpon>studentreport.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="dashboard.resx">
       <DependentUpon>dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,9 +104,6 @@
     <EmbeddedResource Include="studentinfo.resx">
       <DependentUpon>studentinfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="studentreport.resx">
-      <DependentUpon>studentreport.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -128,6 +119,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\navigation bar.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images_finance_icon-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconstd_finance-removebg-preview %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login-removebg-preview1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

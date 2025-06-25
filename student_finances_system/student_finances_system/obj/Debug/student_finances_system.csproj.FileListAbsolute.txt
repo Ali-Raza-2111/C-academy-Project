@@ -53,7 +53,6 @@ D:\New folder\student_finances_system\student_finances_system\obj\Debug\student_
 D:\New folder\student_finances_system\student_finances_system\obj\Debug\student_finances_system.payment.resources
 D:\New folder\student_finances_system\student_finances_system\obj\Debug\student_finances_system.Properties.Resources.resources
 D:\New folder\student_finances_system\student_finances_system\obj\Debug\student_finances_system.studentinfo.resources
-D:\New folder\student_finances_system\student_finances_system\obj\Debug\student_finances_system.studentreport.resources
 D:\New folder\student_finances_system\student_finances_system\obj\Debug\student_finances_system.csproj.GenerateResource.cache
 D:\New folder\student_finances_system\student_finances_system\obj\Debug\student_finances_system.csproj.CoreCompileInputs.cache
 D:\New folder\student_finances_system\student_finances_system\obj\Debug\student_finances_system.exe

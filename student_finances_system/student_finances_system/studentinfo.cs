@@ -287,5 +287,10 @@ namespace student_finances_system
         {
             LoadPaidFeeRecords();
         }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

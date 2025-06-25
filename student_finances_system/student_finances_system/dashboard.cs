@@ -185,5 +185,15 @@ namespace student_finances_system
                 e.SuppressKeyPress = true;
             }
         }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StudentID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
