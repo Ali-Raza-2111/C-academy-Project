@@ -187,7 +187,7 @@
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(926, 19);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(128, 35);
+            this.btnLogin.Size = new System.Drawing.Size(119, 43);
             this.btnLogin.TabIndex = 10;
             this.btnLogin.Text = "Search";
             this.btnLogin.UseVisualStyleBackColor = false;
