@@ -34,15 +34,18 @@ CREATE TABLE FeeStructure (
 drop table FeeStructure
 -------------------------Transction History Table------------------------------
 CREATE TABLE TransactionHistory (
-    TransactionID INT IDENTITY(1,1) PRIMARY KEY,       
-    StudentID VARCHAR(20),                             
-    FeeID INT,                                         
-    AmountPaid DECIMAL(10, 2),                          
-    MonthName VARCHAR(20),                             
-    IsPaid BIT,                                         
-    ConcessionPercent DECIMAL(5, 2),                    
+    TransactionID       INT       IDENTITY(1,1) PRIMARY KEY,
+    StudentID           VARCHAR(20) NOT NULL,
+    FeeID               INT         NOT NULL,
+    AmountPaid          DECIMAL(10,2) NOT NULL,
+    MonthName           VARCHAR(20)  NOT NULL,
+    IsPaid              BIT          NOT NULL,
+    ConcessionPercent   DECIMAL(5,2) NOT NULL,
+    PaymentDate         DATE        NOT NULL
+        CONSTRAINT DF_TransactionHistory_PaymentDate 
+        DEFAULT CAST(GETDATE() AS DATE),
     FOREIGN KEY (StudentID) REFERENCES StudentInfo(StudentID),
-    FOREIGN KEY (FeeID) REFERENCES FeeStructure(FeeID),
+    FOREIGN KEY (FeeID)     REFERENCES FeeStructure(FeeID)
 );
 
 

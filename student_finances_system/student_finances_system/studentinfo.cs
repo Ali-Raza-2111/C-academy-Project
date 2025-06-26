@@ -222,6 +222,28 @@ namespace student_finances_system
         private void studentinfo_Load(object sender, EventArgs e)
         {
             StudentID.AutoCompleteCustomSource = DatabaseHelper.GetStudentIdAutoCompleteCollection();
+            var arialBold8 = new Font("Arial", 8F, FontStyle.Bold);
+
+            // 2. Apply to all data cells
+            dataGridView1.DefaultCellStyle.Font = arialBold8;
+
+            // 3. (Optional) Apply to column headers
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = arialBold8;
+
+            // 4. (Optional) Apply to row headers
+            dataGridView1.RowHeadersDefaultCellStyle.Font = arialBold8;
+
+            // 1. Pick a contrasting color
+            Color headerBackColor = Color.DodgerBlue;
+
+            // 2. Turn off visual styles so your settings take effect
+            dataGridView1.EnableHeadersVisualStyles = false;
+
+            // 3. Apply the background color to column headers
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = headerBackColor;  // :contentReference[oaicite:0]{index=0}
+
+            // 4. Ensure header text is visible (white on blue)
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
 
 

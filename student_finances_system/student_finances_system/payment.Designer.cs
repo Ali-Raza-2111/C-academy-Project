@@ -28,17 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchTransbtn = new System.Windows.Forms.Button();
             this.TransDataGrid = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.searchAllTransbtn = new System.Windows.Forms.Button();
-            this.lblStudentId = new System.Windows.Forms.Label();
-            this.StudentID = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.DeleteTransbtn = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +40,13 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.paystatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.searchAllTransbtn = new System.Windows.Forms.Button();
+            this.lblStudentId = new System.Windows.Forms.Label();
+            this.StudentID = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.DeleteTransbtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TransDataGrid)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -57,7 +57,7 @@
             this.searchTransbtn.BackColor = System.Drawing.Color.Black;
             this.searchTransbtn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchTransbtn.ForeColor = System.Drawing.Color.White;
-            this.searchTransbtn.Location = new System.Drawing.Point(411, 34);
+            this.searchTransbtn.Location = new System.Drawing.Point(595, 40);
             this.searchTransbtn.Name = "searchTransbtn";
             this.searchTransbtn.Size = new System.Drawing.Size(119, 43);
             this.searchTransbtn.TabIndex = 10;
@@ -67,10 +67,10 @@
             // 
             // TransDataGrid
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TransDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TransDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.TransDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TransDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.TransDataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
@@ -85,15 +85,15 @@
             this.Column7,
             this.paystatus,
             this.Column9});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(3, 0, 0, 3);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Sienna;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.TransDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(3, 0, 0, 3);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Sienna;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.TransDataGrid.DefaultCellStyle = dataGridViewCellStyle4;
             this.TransDataGrid.Location = new System.Drawing.Point(39, 391);
             this.TransDataGrid.Name = "TransDataGrid";
             this.TransDataGrid.ReadOnly = true;
@@ -103,93 +103,6 @@
             this.TransDataGrid.TabIndex = 15;
             this.TransDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TransDataGrid_CellContentClick);
             this.TransDataGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.TransDataGrid_CellFormatting);
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel1.Controls.Add(this.searchAllTransbtn);
-            this.panel1.Controls.Add(this.lblStudentId);
-            this.panel1.Controls.Add(this.StudentID);
-            this.panel1.Controls.Add(this.searchTransbtn);
-            this.panel1.Location = new System.Drawing.Point(54, 280);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(983, 105);
-            this.panel1.TabIndex = 14;
-            // 
-            // searchAllTransbtn
-            // 
-            this.searchAllTransbtn.BackColor = System.Drawing.Color.Black;
-            this.searchAllTransbtn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchAllTransbtn.ForeColor = System.Drawing.Color.White;
-            this.searchAllTransbtn.Location = new System.Drawing.Point(639, 12);
-            this.searchAllTransbtn.Name = "searchAllTransbtn";
-            this.searchAllTransbtn.Size = new System.Drawing.Size(209, 79);
-            this.searchAllTransbtn.TabIndex = 12;
-            this.searchAllTransbtn.Text = "All Transctions";
-            this.searchAllTransbtn.UseVisualStyleBackColor = false;
-            this.searchAllTransbtn.Click += new System.EventHandler(this.searchAllTransbtn_Click);
-            // 
-            // lblStudentId
-            // 
-            this.lblStudentId.AutoSize = true;
-            this.lblStudentId.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStudentId.Location = new System.Drawing.Point(28, 40);
-            this.lblStudentId.Name = "lblStudentId";
-            this.lblStudentId.Size = new System.Drawing.Size(91, 24);
-            this.lblStudentId.TabIndex = 1;
-            this.lblStudentId.Text = "Student ID";
-            // 
-            // StudentID
-            // 
-            this.StudentID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.StudentID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.StudentID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.StudentID.Location = new System.Drawing.Point(146, 40);
-            this.StudentID.Name = "StudentID";
-            this.StudentID.Size = new System.Drawing.Size(213, 26);
-            this.StudentID.TabIndex = 0;
-            this.StudentID.TextChanged += new System.EventHandler(this.StudentID_TextChanged);
-            this.StudentID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StudentID_KeyDown);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Perpetua Titling MT", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(127, 138);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(101, 36, 40, 18);
-            this.label1.Size = new System.Drawing.Size(840, 139);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Transction History";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Image = global::student_finances_system.Properties.Resources.login_removebg_preview1;
-            this.pictureBox1.Location = new System.Drawing.Point(560, -42);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(140, 140);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
-            // 
-            // DeleteTransbtn
-            // 
-            this.DeleteTransbtn.BackColor = System.Drawing.Color.Black;
-            this.DeleteTransbtn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteTransbtn.ForeColor = System.Drawing.Color.White;
-            this.DeleteTransbtn.Location = new System.Drawing.Point(25, 856);
-            this.DeleteTransbtn.Name = "DeleteTransbtn";
-            this.DeleteTransbtn.Size = new System.Drawing.Size(198, 52);
-            this.DeleteTransbtn.TabIndex = 18;
-            this.DeleteTransbtn.Text = "Delete Transction";
-            this.DeleteTransbtn.UseVisualStyleBackColor = false;
-            this.DeleteTransbtn.Click += new System.EventHandler(this.DeleteTransbtn_Click);
             // 
             // Column1
             // 
@@ -254,6 +167,93 @@
             this.Column9.MinimumWidth = 8;
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel1.Controls.Add(this.searchAllTransbtn);
+            this.panel1.Controls.Add(this.lblStudentId);
+            this.panel1.Controls.Add(this.StudentID);
+            this.panel1.Controls.Add(this.searchTransbtn);
+            this.panel1.Location = new System.Drawing.Point(54, 280);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1224, 105);
+            this.panel1.TabIndex = 14;
+            // 
+            // searchAllTransbtn
+            // 
+            this.searchAllTransbtn.BackColor = System.Drawing.Color.Black;
+            this.searchAllTransbtn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchAllTransbtn.ForeColor = System.Drawing.Color.White;
+            this.searchAllTransbtn.Location = new System.Drawing.Point(784, 22);
+            this.searchAllTransbtn.Name = "searchAllTransbtn";
+            this.searchAllTransbtn.Size = new System.Drawing.Size(209, 79);
+            this.searchAllTransbtn.TabIndex = 12;
+            this.searchAllTransbtn.Text = "All Transctions";
+            this.searchAllTransbtn.UseVisualStyleBackColor = false;
+            this.searchAllTransbtn.Click += new System.EventHandler(this.searchAllTransbtn_Click);
+            // 
+            // lblStudentId
+            // 
+            this.lblStudentId.AutoSize = true;
+            this.lblStudentId.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudentId.Location = new System.Drawing.Point(28, 40);
+            this.lblStudentId.Name = "lblStudentId";
+            this.lblStudentId.Size = new System.Drawing.Size(91, 24);
+            this.lblStudentId.TabIndex = 1;
+            this.lblStudentId.Text = "Student ID";
+            // 
+            // StudentID
+            // 
+            this.StudentID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.StudentID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.StudentID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.StudentID.Location = new System.Drawing.Point(146, 40);
+            this.StudentID.Name = "StudentID";
+            this.StudentID.Size = new System.Drawing.Size(308, 26);
+            this.StudentID.TabIndex = 0;
+            this.StudentID.TextChanged += new System.EventHandler(this.StudentID_TextChanged);
+            this.StudentID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StudentID_KeyDown);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Font = new System.Drawing.Font("Perpetua Titling MT", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(127, 138);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(101, 36, 40, 18);
+            this.label1.Size = new System.Drawing.Size(840, 139);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Transction History";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Image = global::student_finances_system.Properties.Resources.login_removebg_preview1;
+            this.pictureBox1.Location = new System.Drawing.Point(560, -42);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(140, 140);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
+            // DeleteTransbtn
+            // 
+            this.DeleteTransbtn.BackColor = System.Drawing.Color.Black;
+            this.DeleteTransbtn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteTransbtn.ForeColor = System.Drawing.Color.White;
+            this.DeleteTransbtn.Location = new System.Drawing.Point(25, 856);
+            this.DeleteTransbtn.Name = "DeleteTransbtn";
+            this.DeleteTransbtn.Size = new System.Drawing.Size(198, 52);
+            this.DeleteTransbtn.TabIndex = 18;
+            this.DeleteTransbtn.Text = "Delete Transction";
+            this.DeleteTransbtn.UseVisualStyleBackColor = false;
+            this.DeleteTransbtn.Click += new System.EventHandler(this.DeleteTransbtn_Click);
             // 
             // payment
             // 

@@ -57,3 +57,9 @@ D:\New folder\student_finances_system\student_finances_system\obj\Debug\student_
 D:\New folder\student_finances_system\student_finances_system\obj\Debug\student_finances_system.csproj.CoreCompileInputs.cache
 D:\New folder\student_finances_system\student_finances_system\obj\Debug\student_finances_system.exe
 D:\New folder\student_finances_system\student_finances_system\obj\Debug\student_finances_system.pdb
+D:\New folder\student_finances_system\student_finances_system\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+D:\New folder\student_finances_system\student_finances_system\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+D:\New folder\student_finances_system\student_finances_system\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+D:\New folder\student_finances_system\student_finances_system\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+D:\New folder\student_finances_system\student_finances_system\bin\Debug\Microsoft.SqlServer.Types.dll
+D:\New folder\student_finances_system\student_finances_system\obj\Debug\student_finances_system.csproj.CopyComplete

@@ -31,6 +31,27 @@ namespace student_finances_system
         private void payment_Load(object sender, EventArgs e)
         {
             StudentID.AutoCompleteCustomSource = DatabaseHelper.GetStudentIdAutoCompleteCollection();
+            // 1. Create the uniform font
+            var arialBold8 = new Font("Arial", 8F, FontStyle.Bold);
+
+            // 2. Apply to all data cells
+            TransDataGrid.DefaultCellStyle.Font = arialBold8;
+
+            // 3. Apply to column headers
+            TransDataGrid.ColumnHeadersDefaultCellStyle.Font = arialBold8;
+
+            // 4. Apply to row headers
+            TransDataGrid.RowHeadersDefaultCellStyle.Font = arialBold8;
+
+            // 5. Choose a softer yet contrasting header color
+            Color headerBackColor = Color.DodgerBlue;
+
+            // 6. Disable OS theming so your color takes effect
+            TransDataGrid.EnableHeadersVisualStyles = false;
+
+            // 7. Set header background and text colors
+            TransDataGrid.ColumnHeadersDefaultCellStyle.BackColor = headerBackColor;
+            TransDataGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
 
         private void label1_Click_1(object sender, EventArgs e)
