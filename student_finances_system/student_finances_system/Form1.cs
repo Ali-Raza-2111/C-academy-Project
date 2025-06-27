@@ -83,5 +83,10 @@ namespace student_finances_system
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -36,8 +36,9 @@
             this.btnPayment = new System.Windows.Forms.Button();
             this.btninstallment = new System.Windows.Forms.Button();
             this.displaypanel = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.displaypanel.SuspendLayout();
@@ -137,6 +138,7 @@
             // 
             // displaypanel
             // 
+            this.displaypanel.Controls.Add(this.label2);
             this.displaypanel.Controls.Add(this.pictureBox1);
             this.displaypanel.Controls.Add(this.label1);
             this.displaypanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -145,16 +147,6 @@
             this.displaypanel.Size = new System.Drawing.Size(631, 525);
             this.displaypanel.TabIndex = 2;
             this.displaypanel.Paint += new System.Windows.Forms.PaintEventHandler(this.displaypanel_Paint);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::student_finances_system.Properties.Resources.images_finance_icon_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(656, 260);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(235, 215);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -169,6 +161,29 @@
             this.label1.Text = "Welcome To Student\r\n Finance System";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Perpetua Titling MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(575, 282);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(442, 31);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Executive Science Academy";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::student_finances_system.Properties.Resources.logo__3_;
+            this.pictureBox1.Location = new System.Drawing.Point(581, -99);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(250, 223);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
@@ -205,6 +220,7 @@
         private System.Windows.Forms.Button btnexist;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

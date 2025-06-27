@@ -40,9 +40,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.ConcPercTxtbx = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.conAmountTxtbx = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -172,15 +172,6 @@
             this.ConcPercTxtbx.TabIndex = 18;
             this.ConcPercTxtbx.TextChanged += new System.EventHandler(this.ConcPercTxtbx_TextChanged);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::student_finances_system.Properties.Resources.iconstd_finance_removebg_preview__3_;
-            this.pictureBox1.Location = new System.Drawing.Point(470, 58);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(143, 128);
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
-            // 
             // conAmountTxtbx
             // 
             this.conAmountTxtbx.Location = new System.Drawing.Point(643, 446);
@@ -197,6 +188,16 @@
             this.label7.Size = new System.Drawing.Size(121, 24);
             this.label7.TabIndex = 21;
             this.label7.Text = "Concession";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::student_finances_system.Properties.Resources.logo__1_3;
+            this.pictureBox1.Location = new System.Drawing.Point(504, 52);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(150, 134);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
             // 
             // loginform
             // 

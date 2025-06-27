@@ -138,5 +138,10 @@ namespace student_finances_system
                 }
             }
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

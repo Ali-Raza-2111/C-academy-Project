@@ -140,6 +140,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\registration %281%29.png" />
+    <None Include="Resources\WhatsApp Image 2025-06-27 at 10.58.07 AM.jpeg" />
+    <None Include="Resources\logo %281%29.jpg" />
+    <None Include="Resources\logo %281%291.jpg" />
+    <None Include="Resources\logo %281%292.jpg" />
+    <None Include="Resources\logo %281%293.jpg" />
+    <None Include="Resources\logo.jpg" />
+    <None Include="Resources\logo %283%29.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
