@@ -138,6 +138,11 @@ namespace student_finances_system
                         // Commit all three operations as one atomic unit
                         tx.Commit();
                         MessageBox.Show("Payment recorded successfully.");
+                        StudentID.Text = "";
+                        studentNameTextBox.Text = "";
+                        amountTextBox.Text = "";
+                        Monthcmbx.Text = "";
+                        conAmountTxtbx.Text = "";
                     }
                     catch (Exception ex)
                     {
