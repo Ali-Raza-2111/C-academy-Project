@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchTransbtn = new System.Windows.Forms.Button();
             this.TransDataGrid = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,7 +57,7 @@
             this.searchTransbtn.BackColor = System.Drawing.Color.Black;
             this.searchTransbtn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchTransbtn.ForeColor = System.Drawing.Color.White;
-            this.searchTransbtn.Location = new System.Drawing.Point(595, 40);
+            this.searchTransbtn.Location = new System.Drawing.Point(637, 40);
             this.searchTransbtn.Name = "searchTransbtn";
             this.searchTransbtn.Size = new System.Drawing.Size(119, 43);
             this.searchTransbtn.TabIndex = 10;
@@ -67,10 +67,10 @@
             // 
             // TransDataGrid
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TransDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TransDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle29;
             this.TransDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TransDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.TransDataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
@@ -85,15 +85,15 @@
             this.Column7,
             this.paystatus,
             this.Column9});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(3, 0, 0, 3);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Sienna;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.TransDataGrid.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle30.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle30.Padding = new System.Windows.Forms.Padding(3, 0, 0, 3);
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.Sienna;
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.TransDataGrid.DefaultCellStyle = dataGridViewCellStyle30;
             this.TransDataGrid.Location = new System.Drawing.Point(39, 391);
             this.TransDataGrid.Name = "TransDataGrid";
             this.TransDataGrid.ReadOnly = true;
@@ -198,7 +198,7 @@
             // 
             this.lblStudentId.AutoSize = true;
             this.lblStudentId.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStudentId.Location = new System.Drawing.Point(28, 40);
+            this.lblStudentId.Location = new System.Drawing.Point(197, 52);
             this.lblStudentId.Name = "lblStudentId";
             this.lblStudentId.Size = new System.Drawing.Size(91, 24);
             this.lblStudentId.TabIndex = 1;
@@ -209,7 +209,7 @@
             this.StudentID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.StudentID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.StudentID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.StudentID.Location = new System.Drawing.Point(146, 40);
+            this.StudentID.Location = new System.Drawing.Point(323, 50);
             this.StudentID.Name = "StudentID";
             this.StudentID.Size = new System.Drawing.Size(308, 26);
             this.StudentID.TabIndex = 0;
@@ -235,7 +235,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Image = global::student_finances_system.Properties.Resources.login_removebg_preview1;
-            this.pictureBox1.Location = new System.Drawing.Point(560, -42);
+            this.pictureBox1.Location = new System.Drawing.Point(635, -24);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(140, 140);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -244,12 +244,13 @@
             // 
             // DeleteTransbtn
             // 
+            this.DeleteTransbtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.DeleteTransbtn.BackColor = System.Drawing.Color.Black;
             this.DeleteTransbtn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteTransbtn.ForeColor = System.Drawing.Color.White;
-            this.DeleteTransbtn.Location = new System.Drawing.Point(25, 856);
+            this.DeleteTransbtn.Location = new System.Drawing.Point(510, 868);
             this.DeleteTransbtn.Name = "DeleteTransbtn";
-            this.DeleteTransbtn.Size = new System.Drawing.Size(198, 52);
+            this.DeleteTransbtn.Size = new System.Drawing.Size(265, 68);
             this.DeleteTransbtn.TabIndex = 18;
             this.DeleteTransbtn.Text = "Delete Transction";
             this.DeleteTransbtn.UseVisualStyleBackColor = false;

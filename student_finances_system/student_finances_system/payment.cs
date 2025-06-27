@@ -31,25 +31,25 @@ namespace student_finances_system
         private void payment_Load(object sender, EventArgs e)
         {
             StudentID.AutoCompleteCustomSource = DatabaseHelper.GetStudentIdAutoCompleteCollection();
-            // 1. Create the uniform font
+            
             var arialBold8 = new Font("Arial", 8F, FontStyle.Bold);
 
-            // 2. Apply to all data cells
+           
             TransDataGrid.DefaultCellStyle.Font = arialBold8;
 
-            // 3. Apply to column headers
+           
             TransDataGrid.ColumnHeadersDefaultCellStyle.Font = arialBold8;
 
-            // 4. Apply to row headers
+           
             TransDataGrid.RowHeadersDefaultCellStyle.Font = arialBold8;
 
-            // 5. Choose a softer yet contrasting header color
+            
             Color headerBackColor = Color.DodgerBlue;
 
-            // 6. Disable OS theming so your color takes effect
+            
             TransDataGrid.EnableHeadersVisualStyles = false;
 
-            // 7. Set header background and text colors
+            
             TransDataGrid.ColumnHeadersDefaultCellStyle.BackColor = headerBackColor;
             TransDataGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
@@ -172,12 +172,7 @@ namespace student_finances_system
 
         private void ResequenceTransactionIds()
         {
-            // This batch:
-            // 1) Copies all rows (in old-ID order) into a temp table with a new IDENTITY column
-            // 2) Truncates the real table
-            // 3) Inserts back from the temp table (including the new IDs)
-            // 4) Drops the temp table
-            // 5) Reseeds the identity to the max new ID
+            
             string sql = @"
 BEGIN TRANSACTION;
 
@@ -270,12 +265,12 @@ COMMIT;
                 return;
             }
 
-            // grab the TransactionID of the first selected row
+            
             int transactionId = Convert.ToInt32(
                 TransDataGrid.SelectedRows[0].Cells["Column1"].Value
             );
 
-            // confirm with the user
+           
             if (MessageBox.Show(
                     "Are you sure you want to delete transaction #" + transactionId + "?",
                     "Confirm Delete",
@@ -286,17 +281,17 @@ COMMIT;
                 return;
             }
 
-            // delete from database
+            
             string sql = "DELETE FROM TransactionHistory WHERE TransactionID = @TransactionID";
             using (var con = new SqlConnection(DatabaseHelper.GetConnectionString()))
             using (var cmd = new SqlCommand(sql, con))
             {
                 cmd.Parameters.AddWithValue("@TransactionID", transactionId);
                 con.Open();
-                cmd.ExecuteNonQuery();  // executes the DELETE statement :contentReference[oaicite:1]{index=1}
+                cmd.ExecuteNonQuery(); 
             }
 
-            // remove the row from the grid
+
             TransDataGrid.Rows.Remove(TransDataGrid.SelectedRows[0]);
 
             ResequenceTransactionIds();
@@ -315,12 +310,12 @@ COMMIT;
 
         private void TransDataGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            // Only target the “paystatus” column by its Name
+            
             if (TransDataGrid.Columns[e.ColumnIndex].Name == "paystatus" && e.Value != null)
             {
                 string status = e.Value.ToString();
 
-                // Set only the ForeColor on this cell
+               
                 if (status == "Paid")
                 {
                     e.CellStyle.ForeColor = Color.Green;

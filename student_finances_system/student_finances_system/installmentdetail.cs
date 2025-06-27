@@ -27,30 +27,30 @@ namespace student_finances_system
         {
             var arialBold8 = new Font("Arial", 8F, FontStyle.Bold);
 
-            // 2. Apply to all data cells
+            
             dataGridView1.DefaultCellStyle.Font = arialBold8;
 
-            // 3. (Optional) Apply to column headers
+            
             dataGridView1.ColumnHeadersDefaultCellStyle.Font = arialBold8;
 
-            // 4. (Optional) Apply to row headers
+            
             dataGridView1.RowHeadersDefaultCellStyle.Font = arialBold8;
 
-            // 1. Pick a contrasting color
+            
             Color headerBackColor = Color.DodgerBlue;
 
-            // 2. Turn off visual styles so your settings take effect
+           
             dataGridView1.EnableHeadersVisualStyles = false;
 
-            // 3. Apply the background color to column headers
-            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = headerBackColor;  // :contentReference[oaicite:0]{index=0}
+           
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = headerBackColor; 
 
-            // 4. Ensure header text is visible (white on blue)
+            
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
         private void LoadUnpaidByClassAndMonth()
         {
-            // 1. Read selections
+           
             string selectedClass = classcombx.SelectedItem?.ToString();
             string selectedMonth = monthcombx.SelectedItem?.ToString();
             if (string.IsNullOrEmpty(selectedClass) || string.IsNullOrEmpty(selectedMonth))
@@ -64,8 +64,7 @@ namespace student_finances_system
                 return;
             }
 
-            // 2. SQL: LEFT JOIN StudentInfo → TransactionHistory for that month,
-            //    then show only where IsPaid = 0 OR no transaction exists
+            
             string sql = @"
         SELECT
             s.StudentID,
@@ -82,10 +81,10 @@ namespace student_finances_system
         ORDER BY s.FullName;
     ";
 
-            // 3. Clear any existing rows
+           
             dataGridView1.Rows.Clear();
 
-            // 4. Execute and populate grid
+           
             using (var con = new SqlConnection(DatabaseHelper.GetConnectionString()))
             using (var cmd = new SqlCommand(sql, con))
             {
@@ -124,7 +123,7 @@ namespace student_finances_system
             {
                 string statusValue = e.Value.ToString();
 
-                // Reuse the grid’s default cell font (Arial, 8pt, Bold)
+                
                 Font statusFont = dataGridView1.DefaultCellStyle.Font;
 
                 if (statusValue == "Paid")

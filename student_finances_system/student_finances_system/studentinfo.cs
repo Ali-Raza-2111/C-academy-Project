@@ -57,8 +57,7 @@ namespace student_finances_system
         };
 
                 dataGridView1.Rows.Clear();
-
-                // Add TransactionID column if it doesn't exist
+                
                 if (!dataGridView1.Columns.Contains("TransactionID"))
                 {
                     dataGridView1.Columns.Add("TransactionID", "TransactionID");
@@ -77,18 +76,18 @@ namespace student_finances_system
                     decimal amountPaid = 0;
                     decimal concessionPercent = 0;
                     string status = "Not Paid";
-                    string transactionId = ""; // New line to hold TransactionID
+                    string transactionId = "";
 
                     if (transactionReader.Read())
                     {
-                        transactionId = transactionReader["TransactionID"].ToString(); // fetch TransactionID
+                        transactionId = transactionReader["TransactionID"].ToString(); 
                         amountPaid = Convert.ToDecimal(transactionReader["AmountPaid"]);
                         concessionPercent = Convert.ToDecimal(transactionReader["ConcessionPercent"]);
                         status = (bool)transactionReader["IsPaid"] ? "Paid" : "Not Paid";
                     }
                     transactionReader.Close();
 
-                    // Add row with TransactionID at the end
+                    
                     dataGridView1.Rows.Add(
                         studentId,
                         studentName,
@@ -97,7 +96,7 @@ namespace student_finances_system
                         concessionPercent,
                         amountPaid,
                         status,
-                        transactionId // TransactionID in last cell
+                        transactionId 
                     );
                 }
                 con.Close();
@@ -111,7 +110,7 @@ namespace student_finances_system
             {
                 con.Open();
 
-                // Get list of StudentIDs who have at least one Paid transaction
+                
                 string paidStudentsQuery = "SELECT DISTINCT StudentID FROM TransactionHistory WHERE IsPaid = 1";
                 SqlCommand paidCmd = new SqlCommand(paidStudentsQuery, con);
                 SqlDataReader paidReader = paidCmd.ExecuteReader();
@@ -126,7 +125,7 @@ namespace student_finances_system
 
                 dataGridView1.Rows.Clear();
 
-                // Add TransactionID column if it doesn't exist
+               
                 if (!dataGridView1.Columns.Contains("TransactionID"))
                 {
                     dataGridView1.Columns.Add("TransactionID", "TransactionID");
@@ -195,7 +194,7 @@ namespace student_finances_system
                                 concessionPercent,
                                 amountPaid,
                                 status,
-                                transactionId  // add TransactionID as last cell
+                                transactionId  
                             );
                         }
                     }
@@ -243,25 +242,25 @@ namespace student_finances_system
             StudentID.AutoCompleteCustomSource = DatabaseHelper.GetStudentIdAutoCompleteCollection();
             var arialBold8 = new Font("Arial", 8F, FontStyle.Bold);
 
-            // 2. Apply to all data cells
+            
             dataGridView1.DefaultCellStyle.Font = arialBold8;
 
-            // 3. (Optional) Apply to column headers
+     
             dataGridView1.ColumnHeadersDefaultCellStyle.Font = arialBold8;
 
-            // 4. (Optional) Apply to row headers
+          
             dataGridView1.RowHeadersDefaultCellStyle.Font = arialBold8;
 
-            // 1. Pick a contrasting color
+           
             Color headerBackColor = Color.DodgerBlue;
 
-            // 2. Turn off visual styles so your settings take effect
+            
             dataGridView1.EnableHeadersVisualStyles = false;
 
-            // 3. Apply the background color to column headers
-            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = headerBackColor;  // :contentReference[oaicite:0]{index=0}
+            
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = headerBackColor;  
 
-            // 4. Ensure header text is visible (white on blue)
+            
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
             this.printDocument1.PrintPage += printDocument1_PrintPage;
@@ -318,16 +317,16 @@ namespace student_finances_system
                 return;
             }
 
-            // For now, only pick first selected row
+            
             selectedStudentID = _rowsToPrint[0].Cells["stdID"].Value.ToString();
             selectedTransactionID = _rowsToPrint[0].Cells["TransactionID"].Value.ToString();
 
-            // Wire up PrintPreview
+            
             printPreviewDialog1.Document = printDocument1;
             printPreviewDialog1.UseAntiAlias = true;
             printPreviewDialog1.WindowState = FormWindowState.Maximized;
 
-            // Set zoom
+            
             foreach (Control control in printPreviewDialog1.Controls)
             {
                 if (control is PrintPreviewControl previewControl)
@@ -337,7 +336,7 @@ namespace student_finances_system
                 }
             }
 
-            // Show dialog
+           
             printPreviewDialog1.ShowDialog();
         }
 
@@ -361,7 +360,7 @@ namespace student_finances_system
 
             int y = top;
 
-            // Title
+            
             string title = "Payment Voucher";
             SizeF titleSize = e.Graphics.MeasureString(title, titleFont);
             e.Graphics.DrawString(title, titleFont, brush, left + (pageWidth - titleSize.Width) / 2, y);
@@ -369,13 +368,13 @@ namespace student_finances_system
 
             int x = left;
 
-            // Static Pv No.
+            
             e.Graphics.DrawString("Pv No:", labelFont, brush, x, y);
             e.Graphics.DrawString("0001", valueFont, brush, x + 65, y);
             y += 30;
 
-            // Fetch Data From Database (Single Example Record)
-            string studentID = selectedStudentID; // for now — you can pass this dynamically
+            
+            string studentID = selectedStudentID; 
 
             string studentName = "";
             string fatherName = "";

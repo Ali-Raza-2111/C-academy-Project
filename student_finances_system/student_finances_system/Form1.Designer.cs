@@ -77,7 +77,7 @@
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.mainPanel.Location = new System.Drawing.Point(0, 32);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(202, 525);
+            this.mainPanel.Size = new System.Drawing.Size(301, 525);
             this.mainPanel.TabIndex = 1;
             this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
@@ -89,7 +89,7 @@
             this.btnDashboard.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnDashboard.Location = new System.Drawing.Point(3, 3);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(200, 74);
+            this.btnDashboard.Size = new System.Drawing.Size(292, 91);
             this.btnDashboard.TabIndex = 2;
             this.btnDashboard.Text = "Fee Submission";
             this.btnDashboard.UseVisualStyleBackColor = false;
@@ -101,9 +101,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnstudentinfo.BackColor = System.Drawing.Color.Black;
             this.btnstudentinfo.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnstudentinfo.Location = new System.Drawing.Point(3, 83);
+            this.btnstudentinfo.Location = new System.Drawing.Point(3, 100);
             this.btnstudentinfo.Name = "btnstudentinfo";
-            this.btnstudentinfo.Size = new System.Drawing.Size(200, 86);
+            this.btnstudentinfo.Size = new System.Drawing.Size(292, 98);
             this.btnstudentinfo.TabIndex = 3;
             this.btnstudentinfo.Text = "Fee Records";
             this.btnstudentinfo.UseVisualStyleBackColor = false;
@@ -115,9 +115,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPayment.BackColor = System.Drawing.Color.Black;
             this.btnPayment.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnPayment.Location = new System.Drawing.Point(3, 175);
+            this.btnPayment.Location = new System.Drawing.Point(3, 204);
             this.btnPayment.Name = "btnPayment";
-            this.btnPayment.Size = new System.Drawing.Size(200, 78);
+            this.btnPayment.Size = new System.Drawing.Size(292, 96);
             this.btnPayment.TabIndex = 4;
             this.btnPayment.Text = "Transction History";
             this.btnPayment.UseVisualStyleBackColor = false;
@@ -127,9 +127,9 @@
             // 
             this.btninstallment.BackColor = System.Drawing.Color.Black;
             this.btninstallment.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btninstallment.Location = new System.Drawing.Point(3, 259);
+            this.btninstallment.Location = new System.Drawing.Point(3, 306);
             this.btninstallment.Name = "btninstallment";
-            this.btninstallment.Size = new System.Drawing.Size(200, 86);
+            this.btninstallment.Size = new System.Drawing.Size(292, 103);
             this.btninstallment.TabIndex = 5;
             this.btninstallment.Text = "Defaulter Students";
             this.btninstallment.UseVisualStyleBackColor = false;
@@ -140,9 +140,9 @@
             this.displaypanel.Controls.Add(this.pictureBox1);
             this.displaypanel.Controls.Add(this.label1);
             this.displaypanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.displaypanel.Location = new System.Drawing.Point(202, 32);
+            this.displaypanel.Location = new System.Drawing.Point(301, 32);
             this.displaypanel.Name = "displaypanel";
-            this.displaypanel.Size = new System.Drawing.Size(730, 525);
+            this.displaypanel.Size = new System.Drawing.Size(631, 525);
             this.displaypanel.TabIndex = 2;
             this.displaypanel.Paint += new System.Windows.Forms.PaintEventHandler(this.displaypanel_Paint);
             // 
@@ -164,7 +164,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(3, 29, 3, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(30, 29, 30, 29);
-            this.label1.Size = new System.Drawing.Size(730, 375);
+            this.label1.Size = new System.Drawing.Size(631, 375);
             this.label1.TabIndex = 0;
             this.label1.Text = "Welcome To Student\r\n Finance System";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

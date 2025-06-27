@@ -89,7 +89,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 40;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1249, 364);
+            this.dataGridView1.Size = new System.Drawing.Size(1187, 364);
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
@@ -164,7 +164,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(913, 29);
+            this.button1.Location = new System.Drawing.Point(796, 28);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(201, 59);
             this.button1.TabIndex = 14;
@@ -177,7 +177,7 @@
             this.StudentID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.StudentID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.StudentID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.StudentID.Location = new System.Drawing.Point(261, 46);
+            this.StudentID.Location = new System.Drawing.Point(149, 47);
             this.StudentID.Name = "StudentID";
             this.StudentID.Size = new System.Drawing.Size(271, 28);
             this.StudentID.TabIndex = 13;
@@ -186,10 +186,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(135, 49);
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(41, 49);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 22);
+            this.label2.Size = new System.Drawing.Size(102, 26);
             this.label2.TabIndex = 12;
             this.label2.Text = "Student ID";
             // 
@@ -198,7 +198,7 @@
             this.Searchbtn.BackColor = System.Drawing.Color.Black;
             this.Searchbtn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Searchbtn.ForeColor = System.Drawing.Color.White;
-            this.Searchbtn.Location = new System.Drawing.Point(556, 38);
+            this.Searchbtn.Location = new System.Drawing.Point(446, 39);
             this.Searchbtn.Name = "Searchbtn";
             this.Searchbtn.Size = new System.Drawing.Size(119, 43);
             this.Searchbtn.TabIndex = 11;
@@ -211,7 +211,7 @@
             this.btnAllRecord.BackColor = System.Drawing.Color.Black;
             this.btnAllRecord.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAllRecord.ForeColor = System.Drawing.Color.White;
-            this.btnAllRecord.Location = new System.Drawing.Point(706, 29);
+            this.btnAllRecord.Location = new System.Drawing.Point(589, 28);
             this.btnAllRecord.Name = "btnAllRecord";
             this.btnAllRecord.Size = new System.Drawing.Size(201, 59);
             this.btnAllRecord.TabIndex = 10;
@@ -265,6 +265,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1252, 752);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
