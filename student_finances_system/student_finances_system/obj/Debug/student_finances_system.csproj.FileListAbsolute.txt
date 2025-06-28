@@ -63,3 +63,24 @@ D:\New folder\student_finances_system\student_finances_system\bin\Debug\SqlServe
 D:\New folder\student_finances_system\student_finances_system\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
 D:\New folder\student_finances_system\student_finances_system\bin\Debug\Microsoft.SqlServer.Types.dll
 D:\New folder\student_finances_system\student_finances_system\obj\Debug\student_finances_system.csproj.CopyComplete
+D:\OOP\C-academy-Project\student_finances_system\student_finances_system\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+D:\OOP\C-academy-Project\student_finances_system\student_finances_system\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+D:\OOP\C-academy-Project\student_finances_system\student_finances_system\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+D:\OOP\C-academy-Project\student_finances_system\student_finances_system\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+D:\OOP\C-academy-Project\student_finances_system\student_finances_system\bin\Debug\student_finances_system.exe.config
+D:\OOP\C-academy-Project\student_finances_system\student_finances_system\bin\Debug\student_finances_system.exe
+D:\OOP\C-academy-Project\student_finances_system\student_finances_system\bin\Debug\student_finances_system.pdb
+D:\OOP\C-academy-Project\student_finances_system\student_finances_system\bin\Debug\Microsoft.SqlServer.Types.dll
+D:\OOP\C-academy-Project\student_finances_system\student_finances_system\obj\Debug\student_finances_system.csproj.AssemblyReference.cache
+D:\OOP\C-academy-Project\student_finances_system\student_finances_system\obj\Debug\student_finances_system.loginform.resources
+D:\OOP\C-academy-Project\student_finances_system\student_finances_system\obj\Debug\student_finances_system.Form1.resources
+D:\OOP\C-academy-Project\student_finances_system\student_finances_system\obj\Debug\student_finances_system.installmentdetail.resources
+D:\OOP\C-academy-Project\student_finances_system\student_finances_system\obj\Debug\student_finances_system.payment.resources
+D:\OOP\C-academy-Project\student_finances_system\student_finances_system\obj\Debug\student_finances_system.Properties.Resources.resources
+D:\OOP\C-academy-Project\student_finances_system\student_finances_system\obj\Debug\student_finances_system.studentinfo.resources
+D:\OOP\C-academy-Project\student_finances_system\student_finances_system\obj\Debug\student_finances_system.csproj.GenerateResource.cache
+D:\OOP\C-academy-Project\student_finances_system\student_finances_system\obj\Debug\student_finances_system.csproj.CoreCompileInputs.cache
+D:\OOP\C-academy-Project\student_finances_system\student_finances_system\obj\Debug\student_finances_system.csproj.CopyComplete
+D:\OOP\C-academy-Project\student_finances_system\student_finances_system\obj\Debug\student_finances_system.exe
+D:\OOP\C-academy-Project\student_finances_system\student_finances_system\obj\Debug\student_finances_system.pdb
+D:\OOP\C-academy-Project\student_finances_system\student_finances_system\obj\Debug\student_finances_system.Subject_wise_Teacher_Salary.resources

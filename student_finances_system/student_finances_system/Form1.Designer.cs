@@ -36,9 +36,10 @@
             this.btnPayment = new System.Windows.Forms.Button();
             this.btninstallment = new System.Windows.Forms.Button();
             this.displaypanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.SubwiseFee = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.displaypanel.SuspendLayout();
@@ -75,6 +76,7 @@
             this.mainPanel.Controls.Add(this.btnstudentinfo);
             this.mainPanel.Controls.Add(this.btnPayment);
             this.mainPanel.Controls.Add(this.btninstallment);
+            this.mainPanel.Controls.Add(this.SubwiseFee);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.mainPanel.Location = new System.Drawing.Point(0, 32);
             this.mainPanel.Name = "mainPanel";
@@ -148,20 +150,6 @@
             this.displaypanel.TabIndex = 2;
             this.displaypanel.Paint += new System.Windows.Forms.PaintEventHandler(this.displaypanel_Paint);
             // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Perpetua Titling MT", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 260);
-            this.label1.Margin = new System.Windows.Forms.Padding(3, 29, 3, 0);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(30, 29, 30, 29);
-            this.label1.Size = new System.Drawing.Size(631, 375);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome To Student\r\n Finance System";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -184,6 +172,32 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Font = new System.Drawing.Font("Perpetua Titling MT", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 260);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 29, 3, 0);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(30, 29, 30, 29);
+            this.label1.Size = new System.Drawing.Size(631, 375);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Welcome To Student\r\n Finance System";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // SubwiseFee
+            // 
+            this.SubwiseFee.BackColor = System.Drawing.Color.Black;
+            this.SubwiseFee.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.SubwiseFee.Location = new System.Drawing.Point(3, 415);
+            this.SubwiseFee.Name = "SubwiseFee";
+            this.SubwiseFee.Size = new System.Drawing.Size(292, 97);
+            this.SubwiseFee.TabIndex = 6;
+            this.SubwiseFee.Text = "Subject Wise Teacher Fee";
+            this.SubwiseFee.UseVisualStyleBackColor = false;
+            this.SubwiseFee.Click += new System.EventHandler(this.SubwiseFee_Click);
             // 
             // Form1
             // 
@@ -221,6 +235,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button SubwiseFee;
     }
 }
 

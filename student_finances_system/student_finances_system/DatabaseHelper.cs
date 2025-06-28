@@ -15,6 +15,52 @@ namespace student_finances_system
             return "Data Source=BARYAR\\SQLEXPRESS;Initial Catalog=Student;Integrated Security=True";
         }
 
+
+        public static AutoCompleteStringCollection GetStudentNameAutoCompleteCollection()
+        {
+            AutoCompleteStringCollection nameCollection = new AutoCompleteStringCollection();
+
+            using (SqlConnection con = new SqlConnection(GetConnectionString()))
+            {
+                string query = "SELECT FullName FROM StudentInfo";
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    nameCollection.Add(reader["FullName"].ToString());
+                }
+
+                reader.Close();
+            }
+
+            return nameCollection;
+        }
+
+        public static decimal GetTotalAmountPaid()
+        {
+            decimal totalAmount = 0;
+
+            using (SqlConnection con = new SqlConnection(DatabaseHelper.GetConnectionString()))
+            {
+                string query = "SELECT SUM(AmountPaid) FROM TransactionHistory";
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                con.Open();
+                object result = cmd.ExecuteScalar();
+
+                if (result != DBNull.Value)
+                {
+                    totalAmount = Convert.ToDecimal(result);
+                }
+            }
+
+            return totalAmount;
+        }
+
+
         public static AutoCompleteStringCollection GetStudentIdAutoCompleteCollection()
         {
             AutoCompleteStringCollection idCollection = new AutoCompleteStringCollection();

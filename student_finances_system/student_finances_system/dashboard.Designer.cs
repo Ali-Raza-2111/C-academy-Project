@@ -117,10 +117,14 @@
             // 
             // studentNameTextBox
             // 
+            this.studentNameTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.studentNameTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.studentNameTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.studentNameTextBox.Location = new System.Drawing.Point(518, 341);
             this.studentNameTextBox.Name = "studentNameTextBox";
             this.studentNameTextBox.Size = new System.Drawing.Size(333, 30);
             this.studentNameTextBox.TabIndex = 14;
+            this.studentNameTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.studentNameTextBox_KeyDown);
             // 
             // Monthcmbx
             // 

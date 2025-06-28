@@ -188,6 +188,7 @@ namespace student_finances_system
         {
 
             StudentID.AutoCompleteCustomSource=DatabaseHelper.GetStudentIdAutoCompleteCollection();
+            studentNameTextBox.AutoCompleteCustomSource = DatabaseHelper.GetStudentNameAutoCompleteCollection();
         }
 
         private void StudentID_KeyDown(object sender, KeyEventArgs e)
@@ -260,6 +261,38 @@ namespace student_finances_system
         private void Monthcmbx_SelectedIndexChanged(object sender, EventArgs e)
         {
            
+        }
+
+        private void studentNameTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                using (SqlConnection con = new SqlConnection(DatabaseHelper.GetConnectionString()))
+                {
+                    string query = "SELECT StudentID FROM StudentInfo WHERE FullName = @FullName";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@FullName", studentNameTextBox.Text.Trim());
+
+                    con.Open();
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        StudentID.Text = result.ToString();
+                        // Load months when student found
+                        LoadAvailableMonths(StudentID.Text.Trim());
+                    }
+                    else
+                    {
+                        StudentID.Text = "Not found";
+                        Monthcmbx.Items.Clear(); // Clear if not found
+                    }
+                }
+
+                // Prevent 'ding' sound
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
         }
     }
 }

@@ -36,8 +36,8 @@ namespace student_finances_system
 
            
             TransDataGrid.DefaultCellStyle.Font = arialBold8;
+          
 
-           
             TransDataGrid.ColumnHeadersDefaultCellStyle.Font = arialBold8;
 
            
@@ -255,6 +255,7 @@ COMMIT;
         private void searchAllTransbtn_Click(object sender, EventArgs e)
         {
             displayAllGridData();
+            
         }
 
         private void DeleteTransbtn_Click(object sender, EventArgs e)
@@ -325,6 +326,12 @@ COMMIT;
                     e.CellStyle.ForeColor = Color.Red;
                 }
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            
+            
         }
     }
 }

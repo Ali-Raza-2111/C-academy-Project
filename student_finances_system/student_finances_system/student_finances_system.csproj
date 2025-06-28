@@ -84,6 +84,12 @@
     <Compile Include="studentinfo.Designer.cs">
       <DependentUpon>studentinfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Subject wise Teacher Salary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subject wise Teacher Salary.Designer.cs">
+      <DependentUpon>Subject wise Teacher Salary.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="dashboard.resx">
       <DependentUpon>dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,6 +114,9 @@
     </Compile>
     <EmbeddedResource Include="studentinfo.resx">
       <DependentUpon>studentinfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subject wise Teacher Salary.resx">
+      <DependentUpon>Subject wise Teacher Salary.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

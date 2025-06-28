@@ -45,7 +45,7 @@ namespace student_finances_system
 
         private void mainPanel_Paint(object sender, PaintEventArgs e)
         {
-
+            
         }
 
         private void btnstudentinfo_Click(object sender, EventArgs e)
@@ -72,6 +72,7 @@ namespace student_finances_system
         private void Form1_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.Sizable;
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -87,6 +88,11 @@ namespace student_finances_system
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void SubwiseFee_Click(object sender, EventArgs e)
+        {
+            loadform(new Subject_wise_Teacher_Salary());
         }
     }
 }
