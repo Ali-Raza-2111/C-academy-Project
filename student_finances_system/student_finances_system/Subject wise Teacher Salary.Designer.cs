@@ -38,6 +38,7 @@ namespace student_finances_system
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -76,6 +77,7 @@ namespace student_finances_system
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.Monthcmbx);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.button2);
@@ -124,7 +126,7 @@ namespace student_finances_system
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(201, 59);
             this.button2.TabIndex = 10;
-            this.button2.Text = "All Record";
+            this.button2.Text = "Search";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -154,6 +156,16 @@ namespace student_finances_system
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(674, 15);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(195, 60);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Total Collection";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Subject_wise_Teacher_Salary
             // 
@@ -185,5 +197,6 @@ namespace student_finances_system
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
